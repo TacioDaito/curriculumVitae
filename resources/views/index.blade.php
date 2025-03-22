@@ -18,7 +18,7 @@
             <section>
                 <h2>Log In</h2>
                 <h3>Already have a account?</h3>
-                <form action="/login" method="post">
+                <form action="{{ route(dashboard) }}" method="post">
                     <input type="text" name="email" placeholder="Type here you email"
                         required>
                     <input type="password" name="password" placeholder="Type here your password"
