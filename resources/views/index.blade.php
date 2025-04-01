@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,9 +17,16 @@
         </nav>
         <main>
             <section>
+                @if (session('errors'))
+                    @if (session('errors')->has('email'))
+                        <div class="alert alert-danger">
+                            The credentials informed are incorrect
+                        </div>
+                    @endif
+                @endif
                 <h2>Log In</h2>
                 <h3>Already have a account?</h3>
-                <form action="{{ route('user.dashboard') }}" method="get">
+                <form action="{{ route('user.login') }}" method="get">
                     <input type="text" name="email" placeholder="Type here you email"
                         required>
                     <input type="password" name="password" placeholder="Type here your password"
